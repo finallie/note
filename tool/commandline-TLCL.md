@@ -166,3 +166,10 @@ text ~/*.txt  {a,b} $(echo foo) $((2+2)) $USER
 - locate (不推荐用 用find替换)
 - find -type -name
 - xargs
+
+## 压缩归档
+
+- gzip gunzip 压缩 解压
+- ls -l /etc | gzip > foo.txt.gz
+- zcat zless
+- bzip2 bunzip2 bzcat bzless 压缩程度高 耗时长
