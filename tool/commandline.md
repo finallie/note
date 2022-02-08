@@ -72,3 +72,97 @@ text ~/*.txt   {a,b} foo 4 me
 [me@linuxbox ~]$ echo 'text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER'
 text ~/*.txt  {a,b} $(echo foo) $((2+2)) $USER
 ```
+
+## 权限
+
+- id
+- chmod
+- umask
+- su
+- sudo
+- chown
+- chgrp
+- passwd
+
+## 进程
+
+- ps aux
+- top
+- jobs
+- bg
+- fg
+- kill
+- killall
+-shutdown
+
+## sehll环境
+
+- printenv | less
+- echo $PATH
+- alias
+- export
+- source .bashrc
+
+## Vim
+
+- :q
+- :q!
+- ^ 移动到当前行的第一个非空字符。
+- $ 移动到当前行的末尾。
+- w 移动到下一个单词或标点符号的开头。
+- W 移动到下一个单词的开头，忽略标点符号。
+- b 移动到上一个单词或标点符号的开头。
+- B 移动到上一个单词的开头，忽略标点符号。
+- numberG 移动到第 number 行。例如，1G 移动到文件的第一行。
+- G 移动到文件末尾
+- A 行末插入
+- o 当前行的下方另起一行。
+- O 当前行的上方另起一行。
+
+### 删除
+
+- x 当前字符
+- 3x 当前字符及其后的两个字符。
+- dd 当前行。
+- 5dd 当前行及随后的四行文本。
+- dW 从光标位置开始到下一个单词的开头。
+- d$ 从光标位置开始到当前行的行尾。
+- d0 从光标位置开始到当前行的行首。
+- d^ 从光标位置开始到文本行的第一个非空字符。
+- dG 从当前行到文件的末尾。
+- d20G 从当前行到文件的第20行。
+
+### 复制黏贴
+
+- 黏贴 p 光标后 P 光标前
+- y 复制 用法与删除d类似
+- J 链接行
+- /Line 查询 
+- n 执行上次查询
+- :%s/line/Line/gc
+  - % 操作范围
+  - s 指定操作替换
+  - /line/Line 替换文本
+  - g 全局
+  - c 用户确认
+- :buffers :buffer1 多文件操作
+
+## 软件包管理
+
+- debian apt
+- red-hat yum
+
+## 网络
+
+- ping
+- traceroute
+- netstat
+- ftp
+- ssh
+- scp
+
+## 文件搜索
+
+- locate (不推荐用 用find替换)
+- find -type -name
+- xargs
