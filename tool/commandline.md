@@ -137,7 +137,7 @@ text ~/*.txt  {a,b} $(echo foo) $((2+2)) $USER
 - 黏贴 p 光标后 P 光标前
 - y 复制 用法与删除d类似
 - J 链接行
-- /Line 查询 
+- /Line 查询
 - n 执行上次查询
 - :%s/line/Line/gc
   - % 操作范围
