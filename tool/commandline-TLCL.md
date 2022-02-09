@@ -166,6 +166,7 @@ text ~/*.txt  {a,b} $(echo foo) $((2+2)) $USER
 - locate (不推荐用 用find替换)
 - find -type -name
 - xargs
+- grep -l bzip dirlist*.txt 查询包含bzip的文件名
 
 ## 压缩归档
 
@@ -173,3 +174,32 @@ text ~/*.txt  {a,b} $(echo foo) $((2+2)) $USER
 - ls -l /etc | gzip > foo.txt.gz
 - zcat zless
 - bzip2 bunzip2 bzcat bzless 压缩程度高 耗时长
+- tar cf 创建归档 czf 用gzip压缩 cjf 用bzip2压缩
+- tar tf 查看
+- tar xf 解压
+- find playground -name 'file-A' | tar cf - --files-from=-
+   | gzip > playground.tgz
+- zip 用于和windows系统交换文件
+- alias backup='sudo rsync -av --delete /etc /home /usr/local /media/BigDisk/backup'
+
+## 文本处理
+
+- cat -A
+- cat -ns
+- sort -t ':' -nr -k 5
+
+```bash
+[me@linuxbox ~]$ sort -k 3.7nbr -k 3.1nbr -k 3.4nbr distros.txt
+Fedora         10    11/25/2008
+Ubuntu         8.10  10/30/2008
+SUSE           11.0  06/19/2008
+```
+
+- uniq
+- cut paste join
+- aspell 拼写检查
+
+## 格式化输出
+
+- nl 输出带行数
+- fold -w 12 -s 限制行宽
