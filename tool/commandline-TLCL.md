@@ -3,6 +3,7 @@
 ## simple commands
 
 - df 查看磁盘剩余
+- du -sh 查看文件夹大小
 - free 查看内存
 - exit 退出窗口
 - printenv 环境变量
@@ -203,3 +204,70 @@ SUSE           11.0  06/19/2008
 
 - nl 输出带行数
 - fold -w 12 -s 限制行宽
+
+## 脚本
+
+```block
+if commands; then
+     commands
+[elif commands; then
+     commands...]
+[else
+     commands]
+fi
+```
+
+```block
+测试文件表达式
+-b file file 存在并且是一个块（设备）文件。
+-c file file 存在并且是一个字符（设备）文件。
+-d file file 存在并且是一个目录。
+-e file file 存在。
+-f file file 存在并且是一个普通文件。
+-g file file 存在并且设置了组 ID。
+-G file file 存在并且由有效组 ID 拥有。
+-k file file 存在并且设置了它的“sticky bit”。
+-L file file 存在并且是一个符号链接。
+-O file file 存在并且由有效用户 ID 拥有。
+-p file file 存在并且是一个命名管道。
+-r file file 存在并且可读（有效用户有可读权限）。
+-s file file 存在且其长度大于零。
+-S file file 存在且是一个网络 socket。
+-t fd fd 是一个定向到终端／从终端定向的文件描述符 。 这可以被用来决定是否重定向了标准输入／输出错误。
+-u file file 存在并且设置了 setuid 位。
+-w file file 存在并且可写（有效用户拥有可写权限）。
+-x file file 存在并且可执行（有效用户有执行／搜索权限）。
+```
+
+```block
+测试字符串表达式
+string string is not null.
+-n string The length of string is greater than zero.
+-z string The length of string is zero.
+string1 = string2
+string1 == string2
+string1 and string2 are equal. Single or double equal signs may be used, but the use of double equal signs is greatly preferred.
+string1 != string2 string1 and string2 are not equal.
+string1 > string2 sting1 sorts after string2.
+string1 < string2 string1 sorts before string2.
+```
+
+```block
+测试整数表达式
+integer1 -eq integer2 integer1 等于 integer2。
+integer1 -ne integer2 integer1 不等于 integer2。
+integer1 -le integer2 integer1 小于或等于 integer2。
+integer1 -lt integer2 integer1 小于 integer2。
+integer1 -ge integer2 integer1 大于或等于 integer2。
+integer1 -gt integer2 integer1 大于 integer2。
+```
+
+```block
+[[ ]]表达式
+[[string1 =~ regex]]正则表达式
+[[ $FILE == foo.* ]] 文件路径展开
+```
+
+```block
+(( ))表达式
+```
