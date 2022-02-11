@@ -64,6 +64,10 @@
 - echo {1..5}
 - echo {A{1,2},B{3,4}}
 - ls -l $(which cp)
+- <
+- << _EOF_
+- <<- _EOF_
+- <<<strings
 
 ```bash
 [me@linuxbox ~]$ echo text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER
@@ -215,6 +219,23 @@ if commands; then
 [else
      commands]
 fi
+
+while commands; do commands; done
+
+case word in
+    [pattern [| pattern]...) commands ;;[&]]...
+esac
+a) 若单词为 “a”，则匹配
+[[:alpha:]]) 若单词是一个字母字符，则匹配
+???) 若单词只有3个字符，则匹配
+*.txt) 若单词以 “.txt” 字符结尾，则匹配
+*) 匹配任意单词。把这个模式做为 case 命令的最后一个模式，是一个很好的做法， 可以捕捉到任意一个与先前模式不匹配的数值；也就是说，捕捉到任何可能的无效值。
+
+;;& 允许 case 语句继续执行下一条测试，而不是简单地终止运行。
+
+for i in A B C D; do echo $i; done
+for i in {A..D}; do echo $i; done
+for i ; do echo $i; done  # i指参数
 ```
 
 ```block
@@ -270,4 +291,56 @@ integer1 -gt integer2 integer1 大于 integer2。
 
 ```block
 (( ))表达式
+```
+
+```block
+从键盘读取输入
+read
+-a array 把输入赋值到数组 array 中
+-d delimiter 用字符串 delimiter 中的第一个字符指示输入结束，而不是一个换行符。
+-e 使用 Readline 来处理输入。这使得与命令行相同的方式编辑输入。
+-n num 读取 num 个输入字符，而不是整行。
+-p prompt 为输入显示提示信息，使用字符串 prompt。
+-r Raw mode. 不把反斜杠字符解释为转义字符。
+-s Silent mode. 不会在屏幕上显示输入的字符。当输入密码和其它确认信息的时候，这会很有帮助。
+-t seconds 超时. 几秒钟后终止输入。若输入超时，read 会返回一个非零退出状态。
+-u fd 使用文件描述符 fd 中的输入，而不是标准输入。
+
+IFS=":" read user pw uid gid name home shell <<< "$file_info"
+
+read不能接受管道作为输入
+```
+
+```block
+#!/bin/bash -x
+export PS4='$LINENO + '】
+set -x set +x
+脚本调试
+```
+
+## 参数展开
+
+- $a
+- ${a}
+- ${11}
+- ${parameter:-word}
+- ${parameter:=word} 空则赋值
+- ${parameter:?word}
+- ${parameter:+word}
+- ${!prefix*} ${!prefix@}
+- ${#parameter} 参数长度
+- ${parameter:offset} ${parameter:offset:length} 截取
+- ${parameter#pattern} ${parameter##pattern} 去除开头
+- ${parameter%pattern} ${parameter%%pattern} 去除末尾
+- ${parameter/pattern/string} ${parameter//pattern/string} ${parameter/#pattern/string} ${parameter/%pattern/string} 替换
+- ${parameter,,}  把 parameter 的值全部展开成小写字母。
+- ${parameter,} 仅仅把 parameter 的第一个字符展开成小写字母。
+- ${parameter^^} 把 parameter 的值全部转换成大写字母。
+- ${parameter^} 仅仅把 parameter 的第一个字符转换成大写字母（首字母大写）。
+
+## 其他
+
+```block
+{ ls -l; echo "Listing of foo.txt"; cat foo.txt; } > output.txt
+{ ls -l; echo "Listing of foo.txt"; cat foo.txt; } | lpr
 ```
