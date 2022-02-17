@@ -120,6 +120,7 @@ public int await()
 ```
 
 ```java
+Phaser
 public int register()
 
 public int arriveAndDeregister()
@@ -138,3 +139,24 @@ public void acquire()
 // 释放一个许可，每有一个线程释放，permits计数就加一
 public void release()
 ```
+
+```java
+// 构造方法，声明Exchanger变量时指定泛型，该泛型就是交换的数据类型
+// Exchanger<String> exchanger = new Exchanger<>();
+public Exchanger()
+
+// 两个线程交换数据，传入参数是当前线程计划交换给目标线程的数据，
+// 返回值是从目标线程交换来的数据。
+// 先到达此处的线程将阻塞，直到目标线程也执行到该方法。
+public V exchange(V x)
+```
+
+### JUC容器
+
+- ConcurrentHashMap
+- ConcurrentSkipListMap
+- Collections.newSetFromMap(new ConcurrentHashMap())
+- ConcurrentSkipListSet
+- CopyOnWriteArrayList CopyOnWriteArraySet 注重迭代操作
+- ConcurrentLinkedQueue fifo 并发性能优于BlcokingQuene
+- ConcurrentLinkedDeque
