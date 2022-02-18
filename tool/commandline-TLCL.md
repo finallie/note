@@ -45,9 +45,9 @@
 ## 重定向
 
 - \>
-- \>\>
-- 2>&1
-- &>
+- \>\>  添加至文件末尾
+- 2>&1  标准错误重定向
+- &> 重定向标准输出标准错误
 - \> /dev/null
 - cat
 - cat < in.txt
@@ -98,7 +98,7 @@ text ~/*.txt  {a,b} $(echo foo) $((2+2)) $USER
 - fg
 - kill
 - killall
--shutdown
+- shutdown
 
 ## sehll环境
 
