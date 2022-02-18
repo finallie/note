@@ -160,3 +160,23 @@ public V exchange(V x)
 - CopyOnWriteArrayList CopyOnWriteArraySet 注重迭代操作
 - ConcurrentLinkedQueue fifo 并发性能优于BlcokingQuene
 - ConcurrentLinkedDeque
+
+### 原子类
+
+- AtomicIntegerFieldUpdater等类的field必须是volatile修饰的
+
+### BlockingQuene
+
+- fifo LinkedBlockingQueue相比ArrayBlockingQueue通常性能更高
+- 优先队列 PriorityBlockingQueue
+- deque LinkedBlockingDeque
+- SynchronousQueue 容量为0
+- DelayQueue 插入元素不能马上被获取
+- LinkedTransferQueue
+
+### 线程池
+
+- ExecutorCompletionService 对完成顺序排序
+- 线程池概念：核心线程、临时线程、任务队列
+- 任务提交：核心线程->任务队列->临时线程->RejectedExecutionHandler
+- 线程池参数: 根据cpu数、io时间、cpu计算时间 来确定
