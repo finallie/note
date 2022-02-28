@@ -172,6 +172,7 @@ text ~/*.txt  {a,b} $(echo foo) $((2+2)) $USER
 - find -type -name
 - xargs
 - grep -l bzip dirlist*.txt 查询包含bzip的文件名
+- grep -nr 'text'
 
 ## 压缩归档
 
