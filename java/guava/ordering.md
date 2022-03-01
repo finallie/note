@@ -22,4 +22,7 @@ isInStrictOrder//不能相等
 Stream.of("foo", "quux", "banana", "elephant")
   .collect(least(2, comparingInt(String::length)))   
 // returns {"foo", "quux"}
+
+//ComparisonChain
+(a,b) -> ComparisonChain.start().compare(a.x,b.x).compare(a.y,b.y).result();
 ```
