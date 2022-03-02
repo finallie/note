@@ -1,4 +1,6 @@
-# Modifier
+#
+
+## Modifier
 
 ```java
 Class.getModifiers()
@@ -8,7 +10,7 @@ public static boolean isPublic(int mod)
 public static String toString(int mod)
 ```
 
-# Array
+## Array
 
 ```java
 public static Object newInstance(Class<?> componentType, int... dimensions)
@@ -16,7 +18,7 @@ public static native int getLength(Object array)
 public static native void set(Object array, int index, Object value)
 ```
 
-# class
+## class
 
 ```java
 //Returns:the immediately enclosing method of the underlying class, if that class is a local or anonymous class; otherwise null
