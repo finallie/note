@@ -31,3 +31,16 @@ public Field[] getFields()//public 包括父类
 public Class<?>[] getDeclaredClasses()// 所有 不包括父类
 
 ```
+
+## Proxy
+
+```java
+ArrayList<String> arrayList = new ArrayList<>();
+//noinspection unchecked
+List<String> p = (List<String>) Proxy.newProxyInstance(List.class.getClassLoader(), new Class<?>[]{List.class},
+                (proxy, method, args1) -> {
+                    System.out.println(method.getName() + Arrays.toString(args1));
+                    return method.invoke(arrayList, args1);
+                }
+        );
+```
