@@ -60,3 +60,9 @@ CharMatcher.is('/')
 String s = "lowerCamel";
         System.out.println(CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_HYPHEN, s))
 ```
+
+- Hashing
+
+```java
+Hashing.md5().hashString("abc", StandardCharsets.UTF_8)
+```
