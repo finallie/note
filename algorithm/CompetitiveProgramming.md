@@ -46,3 +46,18 @@ void add(int k, int x) {
 ## Range updates
 
 difference array
+
+## bit manipulation
+
+- __builtin_clz(x): the number of zeros at the beginning of the number
+- __builtin_ctz(x): the number of zeros at the end of the number
+- __builtin_popcount(x): the number of ones in the number
+- __builtin_parity(x): the parity (even or odd) of the number of ones
+
+```c++
+//遍历x的子集
+int b = 0;
+do {
+// process subset b
+} while (b=(b-x)&x);
+```
