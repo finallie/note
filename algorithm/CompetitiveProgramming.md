@@ -61,3 +61,36 @@ do {
 // process subset b
 } while (b=(b-x)&x);
 ```
+
+## 最短路径
+
+- Bellman–Ford 边的权重可以为负数 检测负环 O(VE)
+
+```c++
+for (int i = 1; i <= n; i++) distance[i] = INF;
+distance[x] = 0;
+for (int i = 1; i <= n-1; i++) {
+    for (auto e : edges) {
+        int a, b, w;
+        tie(a, b, w) = e;
+        distance[b] = min(distance[b], distance[a]+w);
+    }
+}
+```
+
+- Shortest Path Faster Algorithm  Bellman–Ford升级版 只遍历更新的点 用quene实现
+
+- Dijkstra’s algorithm 不能有负边 O(V+ ElogE)
+
+- Floyd–Warshall O(n^3^) 所有最短路径
+
+```c++
+for (int k = 1; k <= n; k++) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            distance[i][j] = min(distance[i][j],
+            distance[i][k]+distance[k][j]);
+        }
+    }
+}
+```
