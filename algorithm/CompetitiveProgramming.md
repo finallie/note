@@ -94,3 +94,23 @@ for (int k = 1; k <= n; k++) {
     }
 }
 ```
+
+## Tree
+
+- traversal
+
+```c++
+void dfs(int s, int e) {
+    // process node s
+    for (auto u : adj[s]) {
+        if (u != e) dfs(u, s);
+    }
+}
+```
+
+- Diameter
+
+## Spanning trees
+
+- Kruskal’s algorithm（并查集）
+- Prim’s algorithm
