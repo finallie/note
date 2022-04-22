@@ -121,3 +121,23 @@ void dfs(int s, int e) {
 
 - Kruskal’s algorithm（并查集）
 - Prim’s algorithm
+
+## 欧拉路径 欧拉回路
+
+判定方法：欧拉回路所有顶点的度数为偶数（欧拉路径只有1对顶点为奇数）
+
+```c++
+# circuit is a global array
+   find_euler_circuit
+     circuitpos = 0
+     find_circuit(node 1)
+
+# nextnode and visited is a local array
+# the path will be found in reverse order
+  find_circuit(node i)
+    while (node i has neighbors)
+        pick a random neighbor node j of node i
+        delete_edges (node j, node i)
+        find_circuit (node j)
+    circuit(circuitpos++) = node i
+```
