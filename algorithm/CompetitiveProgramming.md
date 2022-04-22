@@ -86,6 +86,13 @@ for (int i = 1; i <= n-1; i++) {
 
 ```c++
 for (int k = 1; k <= n; k++) {
+    //加强Floyd–Warshall 求最小环 edge[i][i]需设置为INF而不是0
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            mn = min(mn, distance[i][j]+edge[i][k]+edge[k][j])
+        }
+    }
+
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             distance[i][j] = min(distance[i][j],
