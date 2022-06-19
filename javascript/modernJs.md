@@ -4,7 +4,9 @@
 类型转换
 String()
 Number()
-Boolean()
+Boolean() 返回原始类型
+
+new String() 返回对象
 ```
 
 ```block
