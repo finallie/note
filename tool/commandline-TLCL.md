@@ -238,6 +238,7 @@ text ~/*.txt  {a,b} $(echo foo) $((2+2)) $USER
 
 - gzip gunzip 压缩 解压
 - ls -l /etc | gzip > foo.txt.gz
+- gunzip -c foo.txt.gz | less
 - zcat zless
 - bzip2 bunzip2 bzcat bzless 压缩程度高 耗时长
 - tar cf 创建归档 czf 用gzip压缩 cjf 用bzip2压缩
