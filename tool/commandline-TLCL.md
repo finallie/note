@@ -264,7 +264,10 @@ SUSE           11.0  06/19/2008
 
 - uniq
 - cut paste join
+- cut 抽取文本列，paste 合并文本列
+- cut -f 3 distros.txt | cut -c 7-10
 - aspell 拼写检查
+- sed -n '2,3s/regexp/replacement/g'
 
 ## 格式化输出
 
