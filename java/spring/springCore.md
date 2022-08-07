@@ -5,3 +5,12 @@
 - BeanPostProcessor接口
 - Scope接口
 - PropertySourcesPlaceholderConfigurer 处理@Value ${}
+
+## Annotation-based Container Configuration
+
+- @Required
+- @Autowired
+- @Primary
+- @Qualifier
+- @Resource
+- 
