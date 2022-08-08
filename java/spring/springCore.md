@@ -13,4 +13,8 @@
 - @Primary
 - @Qualifier
 - @Resource
-- 
+- @Value @PropertySource @Configuration
+- @PostConstruct @PreDestroy
+- @Component @Service @Controller @Repository @Configuration
+- @Scope @Qualifier @Lazy
+- @Profile
