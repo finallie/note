@@ -27,3 +27,5 @@
 - DigestUtils
 - ReflectionUtils
 - ResourceUtils
+- AnnotationUtils
+- BeanUtils
