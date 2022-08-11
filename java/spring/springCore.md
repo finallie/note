@@ -18,3 +18,12 @@
 - @Component @Service @Controller @Repository @Configuration
 - @Scope @Qualifier @Lazy
 - @Profile
+
+## utils
+
+- AutoPopulatingList(LazyList)
+- FileCopyUtils
+- FileSystemUtils
+- DigestUtils
+- ReflectionUtils
+- ResourceUtils
