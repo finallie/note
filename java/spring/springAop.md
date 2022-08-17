@@ -14,3 +14,8 @@
   - @within
   - @args
   - bean(*Service)
+- @Before
+- @After
+- @Around
+- @AfterReturning
+- @AfterThrowing
