@@ -1,0 +1,14 @@
+#
+
+## Log Levels
+
+``` yml
+logging.level.root=warn
+logging.level.org.springframework.web=debug
+logging.level.org.hibernate=error
+```
+
+## Log Groups
+
+- logging.group.web
+- logging.group.sql
