@@ -131,13 +131,14 @@ text ~/*.txt  {a,b} $(echo foo) $((2+2)) $USER
 
 - :q
 - :q!
-- u 撤销操作
+- u 撤销操作 U ctrl+r
 - ^ 移动到当前行的第一个非空字符。
 - $ 移动到当前行的末尾。
 - w 移动到下一个单词或标点符号的开头。
 - W 移动到下一个单词的开头，忽略标点符号。
 - b 移动到上一个单词或标点符号的开头。
 - B 移动到上一个单词的开头，忽略标点符号。
+- 0 w W b B e E ^ $
 - numberG 移动到第 number 行。例如，1G 移动到文件的第一行。
 - G 移动到文件末尾
 - A 行末插入
@@ -409,3 +410,51 @@ set -x set +x
 { ls -l; echo "Listing of foo.txt"; cat foo.txt; } > output.txt
 { ls -l; echo "Listing of foo.txt"; cat foo.txt; } | lpr
 ```
+
+## 特殊变量
+
+- $0 - 脚本名
+- $1 到 $9 - 脚本的参数。 $1 是第一个参数，依此类推。
+- $@ - 所有参数
+- $# - 参数个数
+- $? - 前一个命令的返回值
+- \$$ - 当前脚本的进程识别码
+- !! - 完整的上一条命令，包括参数。常见应用：当你因为权限不足执行命令失败时，可以使用 sudo !!再尝试一次。
+- $_ - 上一条命令的最后一个参数。如果你正在使用的是交互式 shell，你可以通过按下 Esc 之后键入 . 来获取这个值。
+- $(cmd) - 执行命令 cmd 并返回其输出。这是一个命令替换的例子，它的作用和反引号是一样的。
+- <(cmd) - 执行命令 cmd 并返回一个文件描述符，这个文件描述符指向一个临时文件，这个文件包含了命令 cmd 的输出。这个特性在 Bash 4.0 中被引入
+- [[ ]与\[[ \]]差别](http://mywiki.wooledge.org/BashFAQ/031)
+- 查看[]语法  man test
+
+## 工具
+
+- man tldr
+- find fd locate
+- [grep ack ag rg](https://beyondgrep.com/feature-comparison/)
+
+## vim
+
+- u U ctrl+r 撤销
+- a A o O
+- motion
+  - 0 行首
+  - ^ $
+  - w W
+  - b B
+  - e E
+  - G
+  - gg
+- operator
+  - d 删除
+  - c 删除+插入模式
+  - y 复制
+  - p P 黏贴
+  - r 替换字符
+  - x 删除字符
+- 查询 / ?
+- ctrl+o ctrl+i 前进 后退
+- % 括号匹配
+- ctrl+g 查询位置
+- :r filename 插入文件
+- :r !cmd 插入命令执行结果
+- :w filename 写入文件
