@@ -18,3 +18,9 @@ git config --global http.proxy 'socks5://127.0.0.1:10808'
 - git merge branch_name
 - git cherry-pick commit_id1 commit_id2
 - git rebase -i commit_id
+- git pull --rebase ; git push
+- git branch -u origin/branch_name branch_name
+- git push origin source:destination
+- git fetch origin source:destination
+- git pull origin source:destination
+  
