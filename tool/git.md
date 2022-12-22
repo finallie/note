@@ -23,3 +23,9 @@
 - git fetch origin source:destination
 - git pull origin source:destination
   
+- git add .
+- git status -sb
+- git commit -am "message"
+- git diff --cached
+- git log --graph --oneline -n
+- git commit --amend
