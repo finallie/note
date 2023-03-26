@@ -32,3 +32,11 @@
 
 - [language-overview](https://docs.docker.com/language/)
 - [nodejs](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
+
+## apps
+
+```bash
+# mysql
+docker run -d --network network -e MYSQL_ROOT_PASSWORD=root --name mysql -v mysqlData:/var/lib/mysql -p 3306:3306 mysql
+
+```
