@@ -33,10 +33,22 @@
 - [language-overview](https://docs.docker.com/language/)
 - [nodejs](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
 
-## apps
+## 中间件
+
+cassandra
 
 ```bash
-# mysql
-docker run -d --network network -e MYSQL_ROOT_PASSWORD=root --name mysql -v mysqlData:/var/lib/mysql -p 3306:3306 mysql
+docker run -d --network net -p 9042:9042  --name cassandra -v cassandra:/var/lib/cassandra cassandra
+```
 
+mysql
+
+```bash
+docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -v mysqlData:/var/lib/mysql --network net --network-alias mysql  mysql:8.0
+```
+
+mongodb
+
+```bash
+docker run -d --name mongo -p 27017:27017 -v mongoData:/data/db --network net --network-alias mongo mongo
 ```
